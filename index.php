@@ -1,5 +1,5 @@
 <?php
-
+// Koneksi ke database
 require 'function.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
@@ -17,12 +17,13 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     <title>Admin Data Mahasiswa</title>
 </head>
 
+
 <body>
 
     <h1>Daftar Mahasiswa</h1>
 
-    <a href="tambah.php">Tambah Data</a>
-    <br><br>
+
+   
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
@@ -33,6 +34,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
             <th>NPM</th>
             <th>Jurusan</th>
             <th>Email</th>
+        
         </tr>
 
         <?php $i = 1; ?>
@@ -42,8 +44,8 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
                 <td> <?= $i; ?> </td>
 
                 <td>
-                    <a href="ubah.php?id=<?php echo $row["id"]; ?>">Ubah</a> |
-                    <a href="hapus.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Yakin Ingin Menghapus Data');  ">Hapus</a>
+                    <a href="">Ubah</a> |
+                    <a href="">Hapus</a>
                 </td>
                 <td><img src="img/<?php echo $row["gambar"] ?>" width="50"></td>
                 <td><?php echo $row["nama"] ?></td>
@@ -53,6 +55,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
             </tr>
             <?php $i++; ?>
         <?php endforeach; ?>
+
 
     </table>
 
