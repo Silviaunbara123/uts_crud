@@ -1,6 +1,6 @@
 
-<?php
-$db = mysqli_connect("localhost", "root", "", "elaanisa_belajarphp");
+<php
+$db = mysqli_connect("localhost", "root", "", "belajarphp");
 
 function query($query)
 {
@@ -11,22 +11,4 @@ function query($query)
         $rows[] = $row;
     }
     return $rows;
-}
-
-function tambah($data)
-{
-    global $db;
-
-    $nama = htmlspecialchars($data["nama"]);
-    $npm = htmlspecialchars($data["npm"]);
-    $jurusan = htmlspecialchars($data["jurusan"]);
-    $email = htmlspecialchars($data["email"]);
-    $gambar = htmlspecialchars($data["gambar"]);
-
-    $query = "INSERT INTO mahasiswa VALUES 
-            ('', '$nama', '$npm', '$jurusan', '$email', '$gambar')";
-
-    mysqli_query($db, $query);
-
-    return mysqli_affected_rows($db);
 }
